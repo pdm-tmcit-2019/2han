@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using System.Windows;
 using System.Text;
 using WerewolfSharp;
+using System.Reflection;
 
-namespace SimpleJsonReader
+namespace WerewolfSharp
 {
     class Program
     {
         static void Main(string[] args)
         {            
+
             var serializer = new DataContractJsonSerializer(typeof(JsonData));
-            string FilePath = Path.GetFullPath(@"F:\GitHub\2han\WerewolfSharp\WerewolfSharp\JsonFiles\morning.jsonld");
+            string FilePath = Path.GetFullPath("../../../JsonFiles/morning.jsonld");
             var json = File.ReadAllText(FilePath);
 
             var ms = new MemoryStream(Encoding.UTF8.GetBytes((json)));
