@@ -13,8 +13,7 @@ namespace WerewolfSharp
     class Program
     {
         static void Main(string[] args)
-        {            
-
+        {
             var serializer = new DataContractJsonSerializer(typeof(JsonData));
             string FilePath = Path.GetFullPath("../../../JsonFiles/morning.jsonld");
             var json = File.ReadAllText(FilePath);
@@ -22,13 +21,14 @@ namespace WerewolfSharp
             var ms = new MemoryStream(Encoding.UTF8.GetBytes((json)));
 
             //シリアライズ用
-            //serializer.WriteObject(ms, new Data { Name = "たくのろじぃ" });
+            //serializer.WriteObject(ms, new Data { Name = "ほげほげ" });
             //Console.WriteLine(Encoding.UTF8.GetString(ms.ToArray()));
 
             ms.Seek(0, SeekOrigin.Begin);
             var data = serializer.ReadObject(ms) as JsonData;
 
             string Status = "";
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"ID : {data.Id}");
 
             for (int i = 0; i < data.Context.GetLength(0); i++)
