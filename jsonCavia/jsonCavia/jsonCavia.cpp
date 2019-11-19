@@ -1,20 +1,77 @@
-﻿// jsonCavia.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
-//
+﻿#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iterator>
+#include "calculation.h"
+#include "picojson.h"
 
-#include <iostream>
+const char fname[] = "firstMorning.jsonld";
+
+int parseArray(picojson::value v);
+int parseObject(picojson::value v);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::ifstream ifs(fname, std::ios::in);
+	if (ifs.fail()) {
+		std::cerr << "failed to read test.json" << std::endl;
+		return 1;
+	}
+	const std::string json((std::istreambuf_iterator<char>(ifs)), std::istreambuf_iterator<char>());
+	ifs.close();
+
+	picojson::value v;
+	const std::string err = picojson::parse(v, json);
+	if (!err.empty()) {
+		std::cerr << err << std::endl;
+		return 2;
+	}
+
+	parseObject(v);
+
+	return 0;
 }
 
-// プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
-// プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
+int parseArray(picojson::value v)
+{
+	picojson::array& a = v.get<picojson::array>();
+	std::vector<std::string> strings;
 
-// 作業を開始するためのヒント: 
-//    1. ソリューション エクスプローラー ウィンドウを使用してファイルを追加/管理します 
-//   2. チーム エクスプローラー ウィンドウを使用してソース管理に接続します
-//   3. 出力ウィンドウを使用して、ビルド出力とその他のメッセージを表示します
-//   4. エラー一覧ウィンドウを使用してエラーを表示します
-//   5. [プロジェクト] > [新しい項目の追加] と移動して新しいコード ファイルを作成するか、[プロジェクト] > [既存の項目の追加] と移動して既存のコード ファイルをプロジェクトに追加します
-//   6. 後ほどこのプロジェクトを再び開く場合、[ファイル] > [開く] > [プロジェクト] と移動して .sln ファイルを選択します
+	for (picojson::array::iterator it = a.begin(); it < a.end(); it++) {
+		static int i = 0;
+		strings.emplace_back(it->to_str());
+	}
+
+	for (size_t i = 0; i < strings.size(); i++) {
+		std::cout << "\t" << strings[i] << "\n";
+
+	}
+
+	return 0;
+}
+
+int parseObject(picojson::value v)
+{
+	picojson::object& obj = v.get<picojson::object>();
+	static int i = 0;
+
+	for (const auto& p : obj) {
+		for (int j = 0; j < i; j++) {
+			printf_s("\t");
+		}
+		std::cout << p.first << ": " << p.second.to_str() << std::endl;
+
+		if (p.second.to_str() == "array") {
+			picojson::value& c = obj[p.first];
+			parseArray(c);
+		} else if (p.second.to_str() == "object") {
+			i++;
+			picojson::value& c = obj[p.first];
+			parseObject(c);
+			i--;
+		}
+	}
+
+	return 0;
+}
