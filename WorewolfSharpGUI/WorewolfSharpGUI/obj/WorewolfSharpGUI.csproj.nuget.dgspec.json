@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\takun\\source\\repos\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj": {}
+    "F:\\GitHub\\2han\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\takun\\source\\repos\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj": {
+    "F:\\GitHub\\2han\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\takun\\source\\repos\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj",
+        "projectUniqueName": "F:\\GitHub\\2han\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj",
         "projectName": "WorewolfSharpGUI",
-        "projectPath": "C:\\Users\\takun\\source\\repos\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj",
+        "projectPath": "F:\\GitHub\\2han\\WorewolfSharpGUI\\WorewolfSharpGUI\\WorewolfSharpGUI.csproj",
         "packagesPath": "C:\\Users\\takun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\takun\\source\\repos\\WorewolfSharpGUI\\WorewolfSharpGUI\\obj\\",
+        "outputPath": "F:\\GitHub\\2han\\WorewolfSharpGUI\\WorewolfSharpGUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

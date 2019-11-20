@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WorewolfSharpGUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="grid">
+        <Button Content="ボタンが増えるボタン" HorizontalAlignment="Left" Margin="30,36,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>
