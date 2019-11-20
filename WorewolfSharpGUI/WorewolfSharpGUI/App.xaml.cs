@@ -9,7 +9,7 @@ using System.Windows;
 namespace WorewolfSharpGUI
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// App.xaml の相互作用ロジック
     /// </summary>
     public partial class App : Application
     {

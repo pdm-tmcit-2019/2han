@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WerewolfDataClasses">
+  <DataContextMoniker Name="/WerewolfDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e738a466-8fa1-4d39-b9e0-676a6aae9f55" absoluteBounds="2, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WerewolfDataClassesDataContext/Players" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fca70190-4e54-463a-9824-1ad31b38b539" absoluteBounds="2.015, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f84f0469-c2c1-4347-b214-888e940a96bd" absoluteBounds="5.25, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WerewolfDataClassesDataContext/Chat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="516f3a1f-dfdc-4a1b-b452-f423489c684d" absoluteBounds="5.2650000000000006, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 2.44314697265625); (5.25 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WerewolfDataClassesDataContext/Players/Players_Chat" />
+      <nodes>
+        <classShapeMoniker Id="e738a466-8fa1-4d39-b9e0-676a6aae9f55" />
+        <classShapeMoniker Id="f84f0469-c2c1-4347-b214-888e940a96bd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

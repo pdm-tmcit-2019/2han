@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,19 +17,29 @@ using System.Windows.Shapes;
 namespace WorewolfSharpGUI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Deserializer deserializer = new Deserializer(); //デシリアライズのインスタンス
+        public ObservableCollection<Database.Players> observablePlayers = new ObservableCollection<Database.Players>();
+        public Database.Players players = new Database.Players();
+        Database.Chat chat = new Database.Chat();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public void Show()
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Deserializer ds = new Deserializer();
-            ds.Deserialize("morning");
+            //Jsonデシリアライズ
+            deserializer.Deserialize("morning");
+
+            //データベース処理とGUIへ反映
+            this.observablePlayers.Add(players);
+            this.DataGrid.ItemsSource = observablePlayers;
+
         }
     }
 }

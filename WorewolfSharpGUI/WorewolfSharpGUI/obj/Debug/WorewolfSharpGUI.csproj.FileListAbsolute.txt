@@ -1,0 +1,17 @@
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\bin\Debug\Database\WerewolfDatabase.mdf
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\bin\Debug\Database\WerewolfDatabase_log.ldf
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\bin\Debug\WorewolfSharpGUI.exe.config
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\bin\Debug\WorewolfSharpGUI.exe
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\bin\Debug\WorewolfSharpGUI.pdb
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.csprojAssemblyReference.cache
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\MainWindow.g.cs
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\App.g.cs
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI_Content.g.cs
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI_MarkupCompile.cache
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI_MarkupCompile.lref
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\MainWindow.baml
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.g.resources
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.Properties.Resources.resources
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.csproj.GenerateResource.cache
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.exe
+F:\GitHub\2han\WorewolfSharpGUI\WorewolfSharpGUI\obj\Debug\WorewolfSharpGUI.pdb
