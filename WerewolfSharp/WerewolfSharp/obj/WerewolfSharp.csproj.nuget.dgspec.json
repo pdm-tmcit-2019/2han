@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {}
+    "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {
+    "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+        "projectUniqueName": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
         "projectName": "WerewolfSharp",
-        "projectPath": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+        "projectPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
         "packagesPath": "C:\\Users\\takun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\obj\\",
+        "outputPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,10 +43,21 @@
       "frameworks": {
         "netcoreapp3.0": {
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

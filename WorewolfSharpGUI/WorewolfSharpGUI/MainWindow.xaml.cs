@@ -25,15 +25,10 @@ namespace WorewolfSharpGUI
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Show()
         {
-            Button button = new Button();
-            button.Name = "button1";
-            grid.Children.Add(button);
-
-            var onbutton = (Button)this.grid.FindName("button1");
+            Deserializer ds = new Deserializer();
+            ds.Deserialize("morning");
         }
-
-        
     }
 }
