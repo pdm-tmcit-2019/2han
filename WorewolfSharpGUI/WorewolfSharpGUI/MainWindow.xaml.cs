@@ -21,10 +21,9 @@ namespace WorewolfSharpGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Deserializer deserializer = new Deserializer(); //デシリアライズのインスタンス
-        public ObservableCollection<Database.Players> observablePlayers = new ObservableCollection<Database.Players>();
-        public Database.Players players = new Database.Players();
-        Database.Chat chat = new Database.Chat();
+        StatusDeserializer deserializer = new StatusDeserializer(); //デシリアライズのインスタンス
+        ObservableCollection<Database.Players> observablePlayers = new ObservableCollection<Database.Players>();
+        Database.Players players = new Database.Players();
 
         public MainWindow()
         {
@@ -35,11 +34,11 @@ namespace WorewolfSharpGUI
         {
             //Jsonデシリアライズ
             deserializer.Deserialize("morning");
+        }
 
-            //データベース処理とGUIへ反映
-            this.observablePlayers.Add(players);
-            this.DataGrid.ItemsSource = observablePlayers;
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            deserializer.ChatSend();
         }
     }
 }

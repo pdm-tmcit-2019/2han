@@ -7,6 +7,7 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Role" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Players_Chat" Member="Chat" ThisKey="Id" OtherKey="PlayerID" Type="Chat" />
+      <Association Name="Players_Role" Member="Role1" ThisKey="Id" OtherKey="PlayerID" Type="Role" />
     </Type>
   </Table>
   <Table Name="dbo.Chat" Member="Chat">
@@ -15,6 +16,23 @@
       <Column Name="PlayerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ChatText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Players_Chat" Member="Players" ThisKey="PlayerID" OtherKey="Id" Type="Players" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Role">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Master" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Villager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Medium" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hunter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Madman" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Werewolf" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Werehamster" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Players_Role" Member="Players" ThisKey="PlayerID" OtherKey="Id" Type="Players" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

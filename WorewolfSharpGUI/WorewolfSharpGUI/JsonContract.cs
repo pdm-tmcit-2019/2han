@@ -35,6 +35,9 @@ namespace WorewolfSharpGUI
 
         [DataMember(Name = "character")]
         public Character[] Character { get; set; }
+
+        [DataMember(Name = "role")]
+        public Role[] Role { get; set; }
     }
 
     [DataContract]
@@ -92,5 +95,34 @@ namespace WorewolfSharpGUI
 
         [DataMember(Name = "date")]
         public long Date { get; set; }
+    }
+
+    /// <summary>
+    /// 役職に関する構造体クラス
+    /// </summary>
+    [DataContract]
+    public partial class Role
+    {
+        //true になっているとその役職をもつ
+        [DataMember(Name = "isMine")]
+        public bool IsMine { get; set; }
+
+        //役職名
+        [DataMember(Name = "name")]
+        public Name Name { get; set; }
+
+        //その役職が何人いるか
+        [DataMember(Name = "numberOfPlayers")]
+        public int NumberOfPlayers { get; set; }
+    }
+
+    [DataContract]
+    public partial class Board //ボードに関するクラス
+    {
+        [DataMember(Name = "character")]
+        public Character Character { get; set; }
+
+        [DataMember(Name = "polarity")]
+        public string polarity { get; set; }
     }
 }

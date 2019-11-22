@@ -36,6 +36,9 @@ namespace WorewolfSharpGUI.Database
     partial void InsertChat(Chat instance);
     partial void UpdateChat(Chat instance);
     partial void DeleteChat(Chat instance);
+    partial void InsertRole(Role instance);
+    partial void UpdateRole(Role instance);
+    partial void DeleteRole(Role instance);
     #endregion
 		
 		public WerewolfDataClassesDataContext() : 
@@ -83,6 +86,14 @@ namespace WorewolfSharpGUI.Database
 				return this.GetTable<Chat>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Role> Role
+		{
+			get
+			{
+				return this.GetTable<Role>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Players")]
@@ -101,6 +112,8 @@ namespace WorewolfSharpGUI.Database
 		
 		private EntitySet<Chat> _Chat;
 		
+		private EntitySet<Role> _Role1;
+		
     #region 拡張メソッドの定義
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -118,6 +131,7 @@ namespace WorewolfSharpGUI.Database
 		public Players()
 		{
 			this._Chat = new EntitySet<Chat>(new Action<Chat>(this.attach_Chat), new Action<Chat>(this.detach_Chat));
+			this._Role1 = new EntitySet<Role>(new Action<Role>(this.attach_Role1), new Action<Role>(this.detach_Role1));
 			OnCreated();
 		}
 		
@@ -214,6 +228,19 @@ namespace WorewolfSharpGUI.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Players_Role", Storage="_Role1", ThisKey="Id", OtherKey="PlayerID")]
+		public EntitySet<Role> Role1
+		{
+			get
+			{
+				return this._Role1;
+			}
+			set
+			{
+				this._Role1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -241,6 +268,18 @@ namespace WorewolfSharpGUI.Database
 		}
 		
 		private void detach_Chat(Chat entity)
+		{
+			this.SendPropertyChanging();
+			entity.Players = null;
+		}
+		
+		private void attach_Role1(Role entity)
+		{
+			this.SendPropertyChanging();
+			entity.Players = this;
+		}
+		
+		private void detach_Role1(Role entity)
 		{
 			this.SendPropertyChanging();
 			entity.Players = null;
@@ -366,6 +405,373 @@ namespace WorewolfSharpGUI.Database
 					if ((value != null))
 					{
 						value.Chat.Add(this);
+						this._PlayerID = value.Id;
+					}
+					else
+					{
+						this._PlayerID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Players");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
+	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _PlayerID;
+		
+		private System.Nullable<int> _Day;
+		
+		private System.Nullable<int> _Master;
+		
+		private System.Nullable<int> _Villager;
+		
+		private System.Nullable<int> _Seer;
+		
+		private System.Nullable<int> _Medium;
+		
+		private System.Nullable<int> _Hunter;
+		
+		private System.Nullable<int> _Mason;
+		
+		private System.Nullable<int> _Madman;
+		
+		private System.Nullable<int> _Werewolf;
+		
+		private System.Nullable<int> _Werehamster;
+		
+		private EntityRef<Players> _Players;
+		
+    #region 拡張メソッドの定義
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnPlayerIDChanging(System.Nullable<int> value);
+    partial void OnPlayerIDChanged();
+    partial void OnDayChanging(System.Nullable<int> value);
+    partial void OnDayChanged();
+    partial void OnMasterChanging(System.Nullable<int> value);
+    partial void OnMasterChanged();
+    partial void OnVillagerChanging(System.Nullable<int> value);
+    partial void OnVillagerChanged();
+    partial void OnSeerChanging(System.Nullable<int> value);
+    partial void OnSeerChanged();
+    partial void OnMediumChanging(System.Nullable<int> value);
+    partial void OnMediumChanged();
+    partial void OnHunterChanging(System.Nullable<int> value);
+    partial void OnHunterChanged();
+    partial void OnMasonChanging(System.Nullable<int> value);
+    partial void OnMasonChanged();
+    partial void OnMadmanChanging(System.Nullable<int> value);
+    partial void OnMadmanChanged();
+    partial void OnWerewolfChanging(System.Nullable<int> value);
+    partial void OnWerewolfChanged();
+    partial void OnWerehamsterChanging(System.Nullable<int> value);
+    partial void OnWerehamsterChanged();
+    #endregion
+		
+		public Role()
+		{
+			this._Players = default(EntityRef<Players>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerID", DbType="Int")]
+		public System.Nullable<int> PlayerID
+		{
+			get
+			{
+				return this._PlayerID;
+			}
+			set
+			{
+				if ((this._PlayerID != value))
+				{
+					if (this._Players.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPlayerIDChanging(value);
+					this.SendPropertyChanging();
+					this._PlayerID = value;
+					this.SendPropertyChanged("PlayerID");
+					this.OnPlayerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Day", DbType="Int")]
+		public System.Nullable<int> Day
+		{
+			get
+			{
+				return this._Day;
+			}
+			set
+			{
+				if ((this._Day != value))
+				{
+					this.OnDayChanging(value);
+					this.SendPropertyChanging();
+					this._Day = value;
+					this.SendPropertyChanged("Day");
+					this.OnDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Master", DbType="Int")]
+		public System.Nullable<int> Master
+		{
+			get
+			{
+				return this._Master;
+			}
+			set
+			{
+				if ((this._Master != value))
+				{
+					this.OnMasterChanging(value);
+					this.SendPropertyChanging();
+					this._Master = value;
+					this.SendPropertyChanged("Master");
+					this.OnMasterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Villager", DbType="Int")]
+		public System.Nullable<int> Villager
+		{
+			get
+			{
+				return this._Villager;
+			}
+			set
+			{
+				if ((this._Villager != value))
+				{
+					this.OnVillagerChanging(value);
+					this.SendPropertyChanging();
+					this._Villager = value;
+					this.SendPropertyChanged("Villager");
+					this.OnVillagerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seer", DbType="Int")]
+		public System.Nullable<int> Seer
+		{
+			get
+			{
+				return this._Seer;
+			}
+			set
+			{
+				if ((this._Seer != value))
+				{
+					this.OnSeerChanging(value);
+					this.SendPropertyChanging();
+					this._Seer = value;
+					this.SendPropertyChanged("Seer");
+					this.OnSeerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Medium", DbType="Int")]
+		public System.Nullable<int> Medium
+		{
+			get
+			{
+				return this._Medium;
+			}
+			set
+			{
+				if ((this._Medium != value))
+				{
+					this.OnMediumChanging(value);
+					this.SendPropertyChanging();
+					this._Medium = value;
+					this.SendPropertyChanged("Medium");
+					this.OnMediumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hunter", DbType="Int")]
+		public System.Nullable<int> Hunter
+		{
+			get
+			{
+				return this._Hunter;
+			}
+			set
+			{
+				if ((this._Hunter != value))
+				{
+					this.OnHunterChanging(value);
+					this.SendPropertyChanging();
+					this._Hunter = value;
+					this.SendPropertyChanged("Hunter");
+					this.OnHunterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mason", DbType="Int")]
+		public System.Nullable<int> Mason
+		{
+			get
+			{
+				return this._Mason;
+			}
+			set
+			{
+				if ((this._Mason != value))
+				{
+					this.OnMasonChanging(value);
+					this.SendPropertyChanging();
+					this._Mason = value;
+					this.SendPropertyChanged("Mason");
+					this.OnMasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Madman", DbType="Int")]
+		public System.Nullable<int> Madman
+		{
+			get
+			{
+				return this._Madman;
+			}
+			set
+			{
+				if ((this._Madman != value))
+				{
+					this.OnMadmanChanging(value);
+					this.SendPropertyChanging();
+					this._Madman = value;
+					this.SendPropertyChanged("Madman");
+					this.OnMadmanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Werewolf", DbType="Int")]
+		public System.Nullable<int> Werewolf
+		{
+			get
+			{
+				return this._Werewolf;
+			}
+			set
+			{
+				if ((this._Werewolf != value))
+				{
+					this.OnWerewolfChanging(value);
+					this.SendPropertyChanging();
+					this._Werewolf = value;
+					this.SendPropertyChanged("Werewolf");
+					this.OnWerewolfChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Werehamster", DbType="Int")]
+		public System.Nullable<int> Werehamster
+		{
+			get
+			{
+				return this._Werehamster;
+			}
+			set
+			{
+				if ((this._Werehamster != value))
+				{
+					this.OnWerehamsterChanging(value);
+					this.SendPropertyChanging();
+					this._Werehamster = value;
+					this.SendPropertyChanged("Werehamster");
+					this.OnWerehamsterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Players_Role", Storage="_Players", ThisKey="PlayerID", OtherKey="Id", IsForeignKey=true)]
+		public Players Players
+		{
+			get
+			{
+				return this._Players.Entity;
+			}
+			set
+			{
+				Players previousValue = this._Players.Entity;
+				if (((previousValue != value) 
+							|| (this._Players.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Players.Entity = null;
+						previousValue.Role1.Remove(this);
+					}
+					this._Players.Entity = value;
+					if ((value != null))
+					{
+						value.Role1.Add(this);
 						this._PlayerID = value.Id;
 					}
 					else

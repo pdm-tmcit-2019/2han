@@ -340,7 +340,7 @@
 			"isMine": false,
 			"name": {
 				"en": "Master",
-				"ja": "マスター"
+        "ja": "マスター"
 			},
 			"image": "https://werewolf.world/image/0.3/role_icons/50x50withTI/master_50x50.png",
 			"numberOfPlayers": 1,

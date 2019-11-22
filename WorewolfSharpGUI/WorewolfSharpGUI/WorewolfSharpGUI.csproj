@@ -85,7 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WerewolfDataClasses.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Deserializer.cs" />
+    <Compile Include="StatusDeserializer.cs" />
     <Compile Include="JsonContract.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -179,4 +179,9 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties jsonfiles_4day1_4server2client_4morning_1jsonld__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
