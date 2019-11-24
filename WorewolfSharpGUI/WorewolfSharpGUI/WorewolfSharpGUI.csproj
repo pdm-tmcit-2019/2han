@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -88,7 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WerewolfDataClasses.dbml</DependentUpon>
     </Compile>
-    <Compile Include="StatusDeserializer.cs" />
+    <Compile Include="FirstDeserializer.cs" />
     <Compile Include="JsonContract.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -96,6 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NextDeserializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,6 +122,34 @@
     <None Include="Database\WerewolfDataClasses.dbml.layout">
       <DependentUpon>WerewolfDataClasses.dbml</DependentUpon>
     </None>
+    <None Include="JsonFiles\DAY2\client2server\anonymousAudienceChat.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\board.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\chat.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\error.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\nightVote.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\noonVote.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\onymousAudienceBoard.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\onymousAudienceChat.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\onymousAudienceScroll.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\receipt\receivedChatMessage.json" />
+    <None Include="JsonFiles\DAY2\client2server\receipt\receivedFlavorTextMessage.json" />
+    <None Include="JsonFiles\DAY2\client2server\receipt\receivedSystemMessage.json" />
+    <None Include="JsonFiles\DAY2\client2server\scroll.jsonld" />
+    <None Include="JsonFiles\DAY2\client2server\star.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\anonymousAudienceChat.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\error.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\firstMorning.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\flavorText.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\invitation\nextGameInvitation.json" />
+    <None Include="JsonFiles\DAY2\server2client\invitation\nextGameInvitationIsClosed.json" />
+    <None Include="JsonFiles\DAY2\server2client\morning.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\myMessageOnChat.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\night.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\noon.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\onymousAudienceChat.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\postMortemDiscussion.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\result.jsonld" />
+    <None Include="JsonFiles\DAY2\server2client\theirMessageOnChat.jsonld" />
     <None Include="JsonFiles\DAY1\client2server\anonymousAudienceChat.jsonld" />
     <None Include="JsonFiles\DAY1\client2server\board.jsonld" />
     <None Include="JsonFiles\DAY1\client2server\chat.jsonld" />

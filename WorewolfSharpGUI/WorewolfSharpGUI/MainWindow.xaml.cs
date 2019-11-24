@@ -21,7 +21,8 @@ namespace WorewolfSharpGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        StatusDeserializer deserializer = new StatusDeserializer(); //デシリアライズのインスタンス
+        FirstDeserializer deserializer = new FirstDeserializer(); //デシリアライズのインスタンス
+        NextDeserializer nextDeserializer = new NextDeserializer();
         ObservableCollection<Database.Players> observablePlayers = new ObservableCollection<Database.Players>();
         Database.Players players = new Database.Players();
 
@@ -39,6 +40,11 @@ namespace WorewolfSharpGUI
         private void Button_Solve(object sender, RoutedEventArgs e)
         {
             deserializer.ChatSend();
+        }
+
+        private void Button_Next(object sender, RoutedEventArgs e)
+        {
+            nextDeserializer.NextDay("2", "morning");
         }
     }
 }
