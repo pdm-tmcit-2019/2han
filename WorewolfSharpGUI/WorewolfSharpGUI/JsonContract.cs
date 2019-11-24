@@ -21,8 +21,8 @@ namespace WorewolfSharpGUI
         [DataMember(Name = "phase")]
         public string Phase { get; set; }
 
-        [DataMember(Name = "date")]
-        public int Date { get; set; }
+        [DataMember(Name = "day")]
+        public int Day { get; set; }
 
         [DataMember(Name = "phaseTimeLimit")]
         public int PhaseTimeLimit { get; set; }
@@ -114,6 +114,10 @@ namespace WorewolfSharpGUI
         //その役職が何人いるか
         [DataMember(Name = "numberOfPlayers")]
         public int NumberOfPlayers { get; set; }
+
+        //ボード情報
+        [DataMember(Name = "board")]
+        public Board[] Board { get; set; }
     }
 
     [DataContract]

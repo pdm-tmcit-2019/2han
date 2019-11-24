@@ -17,9 +17,38 @@
                 <DataGridTextColumn Header="チャット" Binding="{Binding ChatText}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="送信" HorizontalAlignment="Left" Margin="336,577,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Name="Chatbox"/>
-        <Label Content="会話ログ" HorizontalAlignment="Left" Margin="27,13,0,0" VerticalAlignment="Top" Width="384"/>
+        <DataGrid HorizontalAlignment="Left" Height="160" Margin="540,44,0,0" VerticalAlignment="Top" Width="461" x:Name="AliverGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Day" Binding="{Binding Day}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="村人" Binding="{Binding Villager}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="占い師" Binding="{Binding Seer}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="霊媒師" Binding="{Binding Medium}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="狩人" Binding="{Binding Hunter}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="共有者" Binding="{Binding Mason}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="狂人" Binding="{Binding Madman}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="人狼" Binding="{Binding Werewolf}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ハムスター人間" Binding="{Binding Werehamster}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="生存数" Binding="{Binding Alivers}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="送信" HorizontalAlignment="Left" Margin="413,574,0,0" VerticalAlignment="Top" Width="75" Click="Button_Solve" Height="23"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" Name="Chatbox"/>
+        <Label Content="会話ログ（チャット）" HorizontalAlignment="Left" Margin="27,13,0,0" VerticalAlignment="Top" Width="384" FontSize="14"/>
+        <Label Content="生存数リスト" HorizontalAlignment="Left" Margin="540,13,0,0" VerticalAlignment="Top" Width="384" FontSize="14"/>
+        <DataGrid HorizontalAlignment="Left" Height="283" Margin="540,261,0,0" VerticalAlignment="Top" Width="461" x:Name="BoardGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="プレイヤー名" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="村人" Binding="{Binding Villager}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="占い師" Binding="{Binding Seer}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="霊媒師" Binding="{Binding Medium}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="狩人" Binding="{Binding Hunter}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="共有者" Binding="{Binding Mason}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="狂人" Binding="{Binding Madman}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="人狼" Binding="{Binding Werewolf}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ハムスター人間" Binding="{Binding Werehamster}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="ボード" HorizontalAlignment="Left" Margin="540,227,0,0" VerticalAlignment="Top" Width="384" FontSize="14"/>
 
     </Grid>
 </Window>

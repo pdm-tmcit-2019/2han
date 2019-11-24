@@ -80,6 +80,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Database\WerewolfDataClasses.cs">
+      <DependentUpon>WerewolfDataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\WerewolfDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

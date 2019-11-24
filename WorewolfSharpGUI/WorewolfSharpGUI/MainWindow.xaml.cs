@@ -33,10 +33,10 @@ namespace WorewolfSharpGUI
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Jsonデシリアライズ
-            deserializer.Deserialize("morning");
+            deserializer.Deserialize("morning");//朝フェーズとそのボード情報を得る
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Solve(object sender, RoutedEventArgs e)
         {
             deserializer.ChatSend();
         }
