@@ -1,20 +1,21 @@
-# TMCIT_WereWolf
-Develop WereWolf game at TMCIT Program design method class group-2. Source code and Works are manage this repository by group-2 Team.
+# WereeolfSharpGUI
+Werewolf world の Json ファイルデータをGUIで表示するためのツールです。
 
-# WerewolfSharpについて
+# 更新状況(Develop-ver1.3.0)
+Json で読み込んだプレイヤー情報とゲーム情報を LocalDB に保持して DataGrid で表示できるようにしました。動作環境は .NET Framework 4.7.3 なので Windows で動作します。また、データベースは Microsoft SQL Server 2016 以上を使用しています。
 
-Server2clientのJsonldファイルをC#で動かして、読み込むことができるコンソールアプリです。動かしてみたい人は .NET Core 3.0 を[インストール](https://dotnet.microsoft.com/download/dotnet-core/3.0)してください。プラットフォームはWindows， Linux， Mac対応です。
+## できること
+会話のログ、プレイヤー人数、その日の時点で分かっている役職を表示できるようになりました。
 
-JsonData.csはJsonldファイルの読み込んだデータの保管に使用します。JsonldのKeyが各クラスの属性（データコントラクト）の名前空間に対応しています。 <br/>
+![screenshot](Images/20191124_1.png "screenshot")
 
-Program.csはJsonldのデシリアライズとエンコードを行い、JsonData.csのメンバ変数に管理されるようになっています。<br/>
-現在はタイムスタンプ、参加しているプレイヤーの名前、生存状況の読み込みと表示が行えます。<br/>
+次の日をクリックすると2日目のJsonファイルを読み込みます。3日以降のデータは用意していないので、何度クリックしても2日目のデータがデータベースに蓄積されるだけです。
 
-   ![screenshot](Images/20151115ScreenShot.png "screenshot")
+![screenshot](Images/20191124_2.png "screenshot")
 
 
-# Imagesディレクトリについて
-   readmeで画像を表示するための画像保管ディレクトリとして作成しました。
+## 現時点での問題点
+データベースの更新に伴い、履歴にあったデータの表示が〇から？になってしまう問題があります。
 
 </br>
-takunology (2019/11/15) 更新
+takunology (2019/11/24) 更新
