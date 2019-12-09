@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WerewolfDatabase" Class="WerewolfDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\WerewolfDatabase.mdf;Integrated Security=True" SettingsObjectName="WorewolfSharpGUI.Properties.Settings" SettingsPropertyName="WerewolfDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Players" Member="Players">
+    <Type Name="Players">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Players_Chat" Member="Chat" ThisKey="Id" OtherKey="PlayerID" Type="Chat" />
+      <Association Name="Players_Board" Member="Board" ThisKey="Name" OtherKey="Name" Type="Board" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Chat" Member="Chat">
+    <Type Name="Chat">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChatText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Players_Chat" Member="Players" ThisKey="PlayerID" OtherKey="Id" Type="Players" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Role">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Master" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Villager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Medium" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hunter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Madman" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Werewolf" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Werehamster" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Alivers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Board" Member="Board">
+    <Type Name="Board">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" AutoSync="Always" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Master" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Villager" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Seer" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Medium" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Hunter" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Mason" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Madman" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Werewolf" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Werehamster" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Alivers" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="Players_Board" Member="Players" ThisKey="Name" OtherKey="Name" Type="Players" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
