@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorewolfSharpGUI"
         mc:Ignorable="d"
-        Title="Werewolf Viewer (Develop-ver1.4.0)" Height="650" Width="1050" Loaded="Window_Loaded">
+        Title="Werewolf Viewer (Develop-ver1.5.0)" Height="650" Width="1050" Loaded="Window_Loaded">
     <Grid>
         <DataGrid HorizontalAlignment="Left" Height="500" Margin="27,44,0,0" VerticalAlignment="Top" Width="461" x:Name="DataGrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -51,6 +51,7 @@
         <Label Content="ボード" HorizontalAlignment="Left" Margin="540,227,0,0" VerticalAlignment="Top" Width="384" FontSize="14"/>
         <Button Content="次の日" HorizontalAlignment="Left" Margin="835,574,0,0" VerticalAlignment="Top" Width="75" Click="Button_Next" Height="23"/>
         <Button Content="書き出し" HorizontalAlignment="Left" Margin="926,574,0,0" VerticalAlignment="Top" Width="75" Click="Button_Write" Height="23"/>
+        <Button Content="C++呼び出し" HorizontalAlignment="Left" Margin="540,574,0,0" VerticalAlignment="Top" Width="75" Click="Button_CppCall" Height="23"/>
 
     </Grid>
 </Window>

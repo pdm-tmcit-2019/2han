@@ -1,0 +1,17 @@
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\bin\Release\Database\WerewolfDatabase.mdf
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\bin\Release\Database\WerewolfDatabase_log.ldf
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\bin\Release\WorewolfSharpGUI.exe.config
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\bin\Release\WorewolfSharpGUI.exe
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\bin\Release\WorewolfSharpGUI.pdb
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.csprojAssemblyReference.cache
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\MainWindow.g.cs
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\App.g.cs
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI_Content.g.cs
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI_MarkupCompile.cache
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI_MarkupCompile.lref
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\MainWindow.baml
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.g.resources
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.Properties.Resources.resources
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.csproj.GenerateResource.cache
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.exe
+C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\WorewolfSharpGUI\obj\Release\WorewolfSharpGUI.pdb

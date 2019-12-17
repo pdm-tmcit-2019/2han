@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +29,10 @@ namespace WorewolfSharpGUI
         //データベース項目のインスタンス
         ObservableCollection<Database.Players> observablePlayers = new ObservableCollection<Database.Players>();
         Database.Players players = new Database.Players();
+
+        //C++で作ったコードの呼び出し / プロトタイプ宣言？
+        [DllImport("ExampleCPP.dll")]
+        static extern int Test(int a, int b);
 
         public MainWindow()
         {
@@ -62,6 +67,12 @@ namespace WorewolfSharpGUI
                 //MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void Button_CppCall(object sender, RoutedEventArgs e)
+        {
+            //C++の文字列を読み込む
+            MessageBox.Show(Test(3, 2).ToString());
         }
     }
 }
