@@ -1,9 +1,25 @@
-﻿// mecabReply.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
-//
-
-#include <iostream>
+﻿#include <iostream>
+#include "Meaning.h"
+#include "Talk.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	OTA::Meaning meaning;
+	std::vector<OTA::mean_t> meanings;
+	char a[256] = {};
+	OTA::Talk talk;
+	OTA::talk_t input;
+	input.name = "たくのろじぃ";
+
+	while (true) {
+		gets_s(a, sizeof(a));
+		input.content = a;
+		std::cout << talk.replyTalk(input) << std::endl;
+
+		if (END_DETECt) {
+			break;
+		}
+	}
+
+	return 0;
 }

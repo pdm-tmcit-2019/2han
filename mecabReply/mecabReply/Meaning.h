@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <mecab.h>
+#include "processes.h"
 
 namespace OTA {
 	typedef struct

@@ -166,10 +166,13 @@
     <ClCompile Include="Meaning.cpp" />
     <ClCompile Include="mecabReply.cpp" />
     <ClCompile Include="processes.cpp" />
+    <ClCompile Include="Talk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Meaning.h" />
     <ClInclude Include="processes.h" />
+    <ClInclude Include="Talk.h" />
+    <ClInclude Include="talklist.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
