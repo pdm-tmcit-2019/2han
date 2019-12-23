@@ -34,6 +34,9 @@ namespace WorewolfSharpGUI
         [DllImport("ExampleCPP.dll")]
         static extern int Test(int a, int b);
 
+        [DllImport("mecabReply.dll", CharSet = CharSet.Ansi)]
+        static extern void mystrcpy(string dest);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -73,6 +76,24 @@ namespace WorewolfSharpGUI
         {
             //C++の文字列を読み込む
             MessageBox.Show(Test(3, 2).ToString());
+        }
+
+        private void Button_OTACall(object sender, RoutedEventArgs e)
+        {
+            //セリフ1
+            string dest = "こんにちは";
+            mystrcpy(dest);
+            MessageBox.Show(dest.ToString(), "パターン1");
+            
+            //セリフ2
+            dest = "お前たちの平成って醜くないか？";
+            mystrcpy(dest);
+            MessageBox.Show(dest.ToString(), "パターン2");
+
+            //セリフ3
+            dest = "end";
+            mystrcpy(dest);
+            MessageBox.Show(dest.ToString(), "パターン3");
         }
     }
 }

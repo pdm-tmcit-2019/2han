@@ -1,6 +1,7 @@
 ﻿  exampleCPP.cpp
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.cpp(6,13): warning C4305: 'return': 'int' から 'char' へ切り詰めます。
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.cpp(6,9): warning C4309: 'return': 定数値が切り捨てられました。
-     ライブラリ C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.lib とオブジェクト C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.exp を作成中
-MSVCRT.lib(exe_main.obj) : error LNK2001: 外部シンボル "main" は未解決です。
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.exe : fatal error LNK1120: 1 件の未解決の外部参照
+     ライブラリ F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.lib とオブジェクト F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.exp を作成中
+  コード生成しています。
+  Previous IPDB not found, fall back to full compilation.
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  ExampleCPP.vcxproj -> F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Release\ExampleCPP.dll
