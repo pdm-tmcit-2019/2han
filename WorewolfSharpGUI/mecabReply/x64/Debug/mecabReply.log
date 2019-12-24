@@ -1,0 +1,11 @@
+﻿  Meaning.cpp
+  mecabReply.cpp
+  processes.cpp
+  Talk.cpp
+  コードを生成中...
+     ライブラリ F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Debug\mecabReply.lib とオブジェクト F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Debug\mecabReply.exp を作成中
+Meaning.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) class MeCab::Tagger * __cdecl MeCab::createTagger(char const *)" (__imp_?createTagger@MeCab@@YAPEAVTagger@1@PEBD@Z) が関数 "public: __cdecl OTA::Meaning::Meaning(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Meaning@OTA@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) で参照されました。
+Talk.obj : error LNK2001: 外部シンボル ""__declspec(dllimport) class MeCab::Tagger * __cdecl MeCab::createTagger(char const *)" (__imp_?createTagger@MeCab@@YAPEAVTagger@1@PEBD@Z)" は未解決です。
+Meaning.obj : error LNK2019: 未解決の外部シンボル "__declspec(dllimport) char const * __cdecl MeCab::getTaggerError(void)" (__imp_?getTaggerError@MeCab@@YAPEBDXZ) が関数 "public: __cdecl OTA::Meaning::Meaning(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Meaning@OTA@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) で参照されました。
+C:\Program Files (x86)\MeCab\sdk\libmecab.lib : warning LNK4272: ライブラリのコンピューターの種類 'x86' がターゲットのコンピューターの種類' x64' と競合しています
+F:\GitHub\WerewolfSharpGUI\WorewolfSharpGUI\x64\Debug\mecabReply.dll : fatal error LNK1120: 2 件の未解決の外部参照

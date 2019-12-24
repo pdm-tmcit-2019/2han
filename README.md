@@ -1,20 +1,50 @@
-# TMCIT_WereWolf
-Develop WereWolf game at TMCIT Program design method class group-2. Source code and Works are manage this repository by group-2 Team.
+# WerewolfSharpGUI
+Werewolf world の Json ファイルデータをGUIで表示するためのツールです。
 
-# WerewolfSharpについて
+# 更新状況 (Develop-ver1.5.1)
+C#からC++の形態素解析を呼び出して、実行できるようにしました。</br>
 
-Server2clientのJsonldファイルをC#で動かして、読み込むことができるコンソールアプリです。動かしてみたい人は .NET Core 3.0 を[インストール](https://dotnet.microsoft.com/download/dotnet-core/3.0)してください。プラットフォームはWindows， Linux， Mac対応です。
+## 実装されている機能
 
-JsonData.csはJsonldファイルの読み込んだデータの保管に使用します。JsonldのKeyが各クラスの属性（データコントラクト）の名前空間に対応しています。 <br/>
+- 会話ログの表示 💬
+- 会話の送信（データベースへの保存のみ）👨
+- 生存者数の数え上げと表示 👬
+- そのフェーズで分かっている役職ボードの表示 🐺
+- Jsonldファイルの書き出し 📝 (未完成)
+- 形態素解析DLL呼び出し 📞<font color="Red"> ← Update!!</font>
 
-Program.csはJsonldのデシリアライズとエンコードを行い、JsonData.csのメンバ変数に管理されるようになっています。<br/>
-現在はタイムスタンプ、参加しているプレイヤーの名前、生存状況の読み込みと表示が行えます。<br/>
+"OTA"ボタンが追加されました。</br>
+クリックすると形態素解析に、あらかじめパターン化された Example の文字列を投げます。</br>
+結果としてはコンソール上に表示されます。解析自体は文字化けしていますが、Mecabとの文字コードが異なるのが原因だと思います。文字化けしてても解析出来ているとは思います。最終的な会話が文字化けしていなければそのまま使用しても問題ないかもしれません。
 
-   ![screenshot](Images/20151115ScreenShot.png "screenshot")
+![screenshot](Images/ver1_5_1(1).png "screenshot")
+
+現在のソリューション（プロジェクト）の状態はこんな感じです。</br>
+形態素解析プロジェクトが追加されました。DLLエクスポートの関係上、すこし中身をいじりました。
+
+![screenshot](Images/ver1_5_1(2).png "screenshot")
+
+動かしている様子です。<br/>
+
+![s](Images/ver1_5_1.gif "sc")
 
 
-# Imagesディレクトリについて
-   readmeで画像を表示するための画像保管ディレクトリとして作成しました。
+## 現時点での問題点
+
+- データベースの更新に伴い、履歴にあったデータの表示が〇から？になってしまう問題
+- 配列要素をもつデータ構造のシリアライズで例外が発生する（おそらくNULL）
+- 形態素解析 DLL にて CSV が読み込めていない様子...(C#から投げられれば良さそう？)
+- プロジェクトが大きくなってきたので、デザインパターンを導入したい（構想中）
+
+<br/>
+
+## デザインパターンを理解できれば...
+WerewolfSharp バージョン2 にアップデートするかもしれません。しばらくバージョン1で続けますが...。
+
+[@nyabingo](https://github.com/nyabingo) さんと並行して製作中。
+
+![s](Images/ver2.png)
+
 
 </br>
-takunology (2019/11/15) 更新
+takunology (2019/12/24) 更新
