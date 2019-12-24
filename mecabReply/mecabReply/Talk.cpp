@@ -21,10 +21,6 @@ namespace OTA {
 		}
 	}
 
-	Talk::~Talk()
-	{
-	}
-
 	void Talk::setupTalkList()
 	{
 		char talk[128] = {};
@@ -87,22 +83,31 @@ namespace OTA {
 		std::vector<mean_t> mecab;
 
 		meaning.getParseResult(input.content, MeCab::createTagger(""));
-		meaning.printPargeResult();
 		mecab = meaning.getMeaningData();
+		meaning.clearInputString();
+
+		for (auto word = mecab.begin(); word != mecab.end(); word++) {
+			if (word->means[0] == "感動詞") {
+				if (word->phrase == "こんにちは")
+					return searchTalkList("こんにちは");
+				else if (word->phrase == "おはよう")
+					return searchTalkList("おはよう");
+				else if (word->phrase == "ありがとう" || word->phrase == "すみません")
+					return searchTalkList("謙遜");
+				else if (word->phrase == "ねえ" || word->phrase == "おい" || word->phrase == "あの")
+					return searchTalkList("応答");
+			}
+		}
 
 		std::vector<std::string> key;
 		key.emplace_back("人狼");
 		key.emplace_back("さん");
+
+
 		std::vector<std::string> talk = searchTalkList(key);
 		for (size_t i = 0; i < talk.size(); i++) {
 			printf_s("%s\n", talk[i].c_str());
 		}
-/*/
-		for (size_t i = 0; i < mecab.size() - 1; i++) {
-			if (mecab[i].phrase + mecab[i + 1].phrase == "人狼") {
-				return insertNameTalk(searchTalkList("白"), input.name);
-			}
-		}*/
 
 		return "ボッ///";
 	}

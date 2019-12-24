@@ -4,8 +4,7 @@
 
 int main()
 {
-	OTA::Meaning meaning;
-	std::vector<OTA::mean_t> meanings;
+	std::vector<OTA::mean_t> mean;
 	char a[256] = {};
 	OTA::Talk talk;
 	OTA::talk_t input;
@@ -15,6 +14,7 @@ int main()
 		gets_s(a, sizeof(a));
 		input.content = a;
 		std::cout << talk.replyTalk(input) << std::endl;
+		OTA::Meaning(input.content).printPargeResult();
 
 		if (END_DETECt) {
 			break;

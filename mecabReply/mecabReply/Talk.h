@@ -25,10 +25,10 @@ namespace OTA {
 	public:
 		Talk();
 		Talk(char *name);
-		~Talk();
 
 		void printAllTalkList();
 		std::string replyTalk(talk_t input);
+		std::vector<std::string> searchTalkList(std::vector<std::string> key);
 
 	private:
 		Meaning meaning;
@@ -36,7 +36,6 @@ namespace OTA {
 		std::vector<lists> talk_list;
 
 		std::string searchTalkList(const char *key);
-		std::vector<std::string> searchTalkList(std::vector<std::string> key);
 		std::string insertNameTalk(std::string talk, std::string name);
 
 		void setupTalkList();

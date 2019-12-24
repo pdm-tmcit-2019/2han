@@ -35,10 +35,10 @@
     <ClInclude Include="Talk.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="talklist.csv">
+    <ClInclude Include="processes.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="processes.h">
+    <ClInclude Include="talklist.csv">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
