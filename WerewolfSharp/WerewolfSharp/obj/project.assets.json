@@ -526,11 +526,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+      "projectUniqueName": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
       "projectName": "WerewolfSharp",
-      "projectPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+      "projectPath": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
       "packagesPath": "C:\\Users\\takun\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\obj\\",
+      "outputPath": "C:\\Users\\takun\\Documents\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

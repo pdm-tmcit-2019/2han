@@ -10,6 +10,10 @@ Werewolf world の Json ファイルデータをGUIで表示するためのツ�
 
 ![s](Images/ver2.png)
 
+## アプリ構成
+形態素解析は「自動化」の部分で関わっていますが、Modelで処理させるようにします。
+
+![s](Images/Structure.png)
 
 ## 現時点での問題点
 
