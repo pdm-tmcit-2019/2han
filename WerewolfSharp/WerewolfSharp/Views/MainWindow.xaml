@@ -1,0 +1,95 @@
+﻿<Window
+    x:Class="WerewolfSharp.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+    xmlns:v="clr-namespace:WerewolfSharp.Views"
+    xmlns:vm="clr-namespace:WerewolfSharp.ViewModels"
+    xmlns:materialDesighn="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Icon="/Resources/WolfIcon.ico"
+    Title="MainWindow"
+    WindowStyle="None"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize"
+    Width="900"
+    Height="600" Loaded="Window_Loaded">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+
+    <behaviors:Interaction.Triggers>
+        <!--  When ContentRendered event raised, Initialize method of ViewModel would be called.  -->
+        <behaviors:EventTrigger EventName="ContentRendered">
+            <l:LivetCallMethodAction MethodName="Initialize" MethodTarget="{Binding}" />
+        </behaviors:EventTrigger>
+
+        <!--  Dispose method is called, when Window closing.  -->
+        <behaviors:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction />
+        </behaviors:EventTrigger>
+
+        <!--  If you make user choose 'OK or Cancel' closing Window, then please use Window Close cancel Behavior.  -->
+
+    </behaviors:Interaction.Triggers>
+
+    <Grid>
+        <Rectangle Width="900" Height="600" Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" StrokeThickness="1"/>
+        <StackPanel MouseDown="Grid_MouseDown">
+            
+            <!--ウィンドウカラー-->
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#4C69F1FF"/>
+                    <GradientStop Color="#4C69F1FF" Offset="1"/>
+                    <GradientStop Color="#80FFFFFF" Offset="0.08"/>
+                    <GradientStop Color="White" Offset="0.97"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Grid Height="40">
+                
+                <!--ウィンドウタイトル-->
+                <StackPanel HorizontalAlignment="Left" Margin="10 10">
+                    <Image Source="/Resources/WolfIcon.ico" Width="20" Height="20"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" Margin="25 0">
+                    <TextBlock Text="{Binding Path=WindowTitle}" FontSize="15" Foreground="Black" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" VerticalAlignment="Center" FontSize="15" Width="40" Height="40" FontWeight="Bold" Command="{Binding informationCommand}">
+                        <materialDesighn:PackIcon Kind="InformationOutline" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="Gray"/>
+                    </Button>
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" VerticalAlignment="Center" FontSize="15" Width="40" Height="40" FontWeight="Bold" Command="{Binding SettingCommand}">
+                        <materialDesighn:PackIcon Kind="Settings" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="Gray"/>
+                    </Button>
+                    <Button  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Gray" VerticalAlignment="Center" FontSize="15" Width="40" Height="40" FontWeight="Bold" Click="WindowHide">
+                        <materialDesighn:PackIcon Kind="WindowMinimize" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="Gray"/>
+                    </Button>
+                    <Button Background="{x:Null}"  BorderBrush="{x:Null}" HorizontalAlignment="Center" FontSize="15" Height="40" FontWeight="Bold" Click="WindowClose" Foreground="Gray">
+                        <materialDesighn:PackIcon Kind="Close" Width="25" Height="25" Margin="5 0"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <!--水平タブメニュー-->
+            <Grid Height="50">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
+                    <Button Uid="0" Width="150" Content="チャット" Height="50" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" Click="Button_Click"/>
+                    <Button Uid="1" Width="150" Content="ボード" Height="50" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" Click="Button_Click"/>
+                    <Button Uid="2" Width="150" Content="生存状況" Height="50" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" Click="Button_Click"/>
+                </StackPanel>
+                <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect 3, Duration=0:0:0.3}">
+                    <Grid x:Name="GridCursor" Width="150" Height="5" Background="SkyBlue" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0"/>
+                </materialDesign:TransitioningContent>
+            </Grid>
+            
+            <!--初期画面チャットコントロール-->
+            <Grid x:Name="GridMain" Margin="0 10">
+                <v:ChatView x:Name="ChatView"/>
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+</Window>

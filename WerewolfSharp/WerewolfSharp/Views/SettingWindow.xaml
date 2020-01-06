@@ -1,0 +1,74 @@
+﻿<Window x:Class="WerewolfSharp.Views.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+        xmlns:v="clr-namespace:WerewolfSharp.Views"
+        xmlns:vm="clr-namespace:WerewolfSharp.ViewModels"
+        xmlns:materialDesighn="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        Name="settingUI"
+        Title="SettingWindow" Height="350" Width="525">
+
+    <Window.DataContext>
+        <vm:SettingWindowViewModel />
+    </Window.DataContext>
+
+    <behaviors:Interaction.Triggers>
+        <!-- When ContentRendered event raised, Initialize method of ViewModel would be called. -->
+        <behaviors:EventTrigger EventName="ContentRendered">
+            <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Initialize" />
+        </behaviors:EventTrigger>
+
+        <!-- Dispose method is called, when Window closing. -->
+        <behaviors:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction />
+        </behaviors:EventTrigger>
+
+        <!-- If you make user choose 'OK or Cancel' closing Window, then please use Window Close cancel Behavior. -->
+
+    </behaviors:Interaction.Triggers>
+
+    <Grid>
+        <StackPanel Background="White" MouseDown="Grid_MouseDown">
+            <Grid Height="40">
+                <StackPanel HorizontalAlignment="Left" Margin="10 0">
+                    <TextBlock Text="アプリの設定"  FontSize="15" Foreground="Black" Margin="0 10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Background="{x:Null}"  BorderBrush="{x:Null}" HorizontalAlignment="Center" FontSize="15" Height="40" FontWeight="Bold" Click="WindowClose" Foreground="Gray">
+                        <materialDesighn:PackIcon Kind="Close" Width="25" Height="25" Margin="5 0"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <!-- ここからWindow内 -->
+            <StackPanel Orientation="Horizontal" Margin="0 10">
+                <TextBlock Text="ウィンドウカラー" Margin="20 0" FontSize="12"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="ColorSelect" Uid="0" Width="50" Height="50" Margin="10 10" Background="#4C69F1FF" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="1" Width="50" Height="50" Margin="10 10" Background="#4C69BBFF" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="2" Width="50" Height="50" Margin="10 10" Background="#4CA069FF" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="3" Width="50" Height="50" Margin="10 10" Background="#4CEB69FF" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="4" Width="50" Height="50" Margin="10 10" Background="#4CFF69A6" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="5" Width="50" Height="50" Margin="10 10" Background="#4CFFC269" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="6" Width="50" Height="50" Margin="10 10" Background="#4CF8FF69" BorderBrush="{x:Null}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="ColorSelect" Uid="7" Width="50" Height="50" Margin="10 10" Background="#4CCFFF69" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="8" Width="50" Height="50" Margin="10 10" Background="#4C92FF69" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="9" Width="50" Height="50" Margin="10 10" Background="#4C69FFC2" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="10" Width="50" Height="50" Margin="10 10" Background="#4CA5C1D4" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="11" Width="50" Height="50" Margin="10 10" Background="#4C4F2E3C" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="12" Width="50" Height="50" Margin="10 10" Background="#4C000000" BorderBrush="{x:Null}"/>
+                    <Button Click="ColorSelect" Uid="13" Width="50" Height="50" Margin="10 10" Background="#4CE2E2E2" BorderBrush="{x:Null}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <Rectangle Width="{Binding ElementName=settingUI, Path=Width}"  Height="{Binding ElementName=settingUI, Path=Height}" Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" StrokeThickness="1"/>
+    </Grid>
+</Window>

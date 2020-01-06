@@ -1,5 +1,0 @@
-﻿  exampleCPP.cpp
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.cpp(5,15): error C2556: 'std::string Test(void)': オーバーロード関数は、'void Test(void)' と戻り値の型のみが異なります。
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.h(4): message : 'Test' の宣言を確認してください
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.cpp(5,8): error C2371: 'Test': 再定義されています。異なる基本型です。
-C:\Users\takun\Desktop\WerewolfSharpGUI\WorewolfSharpGUI\ExampleCPP\exampleCPP.h(4): message : 'Test' の宣言を確認してください

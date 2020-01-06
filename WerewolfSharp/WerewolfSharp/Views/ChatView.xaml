@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="WerewolfSharp.Views.ChatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WerewolfSharp.Views"
+             xmlns:vm="clr-namespace:WerewolfSharp.ViewModels"
+             xmlns:materialDesighn="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="490" d:DesignWidth="900" Background="Snow">
+<!--
+    <UserControl.DataContext>
+        <vm:ChatMessageControlViewModel />
+    </UserControl.DataContext>
+    -->
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="0 0">
+            
+            <!--ページ上部の表示-->
+            <TextBlock Text="たすけて村" Margin="20 10" FontSize="14"/>
+
+            <!--チャットログ-->
+            <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                <StackPanel Orientation="Vertical" Height="400" Margin="10 0">
+                    <Grid Margin="0 10">
+                        <Border Padding="3" CornerRadius="10" Background="CadetBlue" Margin="5 5">
+                            <Border CornerRadius="10" Padding="10" Background="Snow">
+                                <TextBlock VerticalAlignment="Center" Text="あなたが人狼ね！" TextWrapping="Wrap" FontSize="14" x:Name="Message"/>
+                            </Border>
+                        </Border>
+                        <TextBlock x:Name="MessageSentTime" Text="{Binding Date}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 10 -10" FontSize="11" />
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!--チャット送信UI-->
+            <Grid Background="CadetBlue">
+                <StackPanel Orientation="Horizontal" Margin="10 5" Height="40">
+                    <Border CornerRadius="20" Padding="5" Background="Snow">
+                        <TextBox Text="ここにメッセージを入れる" Margin="10 0" Width="800" BorderBrush="{x:Null}" VerticalAlignment="Center" FontSize="14" BorderThickness="0"/>
+                    </Border>
+                    <Button Background="{x:Null}"  BorderBrush="{x:Null}" HorizontalAlignment="Right"  Margin="10 0" FontSize="15" Height="40" FontWeight="Bold" Foreground="AliceBlue">
+                        <materialDesighn:PackIcon Kind="Send" Width="30" Height="30" VerticalAlignment="Center"/>
+                    </Button>
+                    
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

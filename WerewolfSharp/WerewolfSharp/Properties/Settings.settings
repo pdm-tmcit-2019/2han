@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WerewolfSharp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WerewolfSharp</Value>
+    </Setting>
+    <Setting Name="AppVersion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DevelopVer-2.0.0</Value>
+    </Setting>
+    <Setting Name="Organization" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">©TMCIT - pdm Group 2 -</Value>
+    </Setting>
+    <Setting Name="AppAuthor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Takunology, OTA, WhiteStonekun, Senpuki-C-Show, Nyabingo</Value>
+    </Setting>
+    <Setting Name="WindowColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">76, 105, 241, 255</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
