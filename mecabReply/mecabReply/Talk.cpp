@@ -6,19 +6,24 @@ namespace OTA {
 	Talk::Talk()
 	{
 		myname = "”’Î‘n”V‰î";
+		yourname = "ScreenOTA";
 
 		if (getCSVFileData() < 0) {
 			setupTalkList();
 		}
+
+		mt = std::mt19937(rnd());
 	}
 
 	Talk::Talk(char* name)
 	{
 		myname = name;
+		yourname = "ScreenOTA";
 
 		if (getCSVFileData() < 0) {
 			setupTalkList();
 		}
+		mt = std::mt19937(rnd());
 	}
 
 	void Talk::setupTalkList()
@@ -32,7 +37,7 @@ namespace OTA {
 		content.talk = talk;
 		content.tags.emplace_back("©ŒÈĞ‰î");
 
-		talk_list.emplace_back(content);
+		talk_list.push_back(content);
 	}
 
 	int Talk::getCSVFileData()
@@ -62,7 +67,7 @@ namespace OTA {
 				tlist.talk = insertNameTalk(tlist.talk, myname);
 			}
 
-			talk_list.emplace_back(tlist);
+			talk_list.push_back(tlist);
 		}
 
 		ifs.close();
@@ -74,17 +79,18 @@ namespace OTA {
 	{
 		if (input.content == "") {
 			return searchTalkList("©ŒÈĞ‰î");
-		} else if (END_DETECt) {
+		} else if (END_DETECT) {
 			return searchTalkList("‘Şê");
 		} else if (input.content == "‚¨‘O‚½‚¿‚Ì•½¬‚Á‚ÄX‚­‚È‚¢‚©H") {
 			return "uu•K¶";
 		}
 
+		yourname = input.name;
 		std::vector<mean_t> mecab;
 
+		meaning = Meaning::Meaning();
 		meaning.getParseResult(input.content, MeCab::createTagger(""));
 		mecab = meaning.getMeaningData();
-		meaning.clearInputString();
 
 		for (auto word = mecab.begin(); word != mecab.end(); word++) {
 			if (word->means[0] == "Š´“®Œ") {
@@ -99,20 +105,27 @@ namespace OTA {
 			}
 		}
 
-		std::vector<std::string> key;
-		key.emplace_back("l˜T");
-		key.emplace_back("‚³‚ñ");
+		if (detectionWerewolf(mecab))
+			input.tags.push_back("l˜T");
 
-
-		std::vector<std::string> talk = searchTalkList(key);
-		for (size_t i = 0; i < talk.size(); i++) {
+		std::vector<std::string> talk = searchTalkList(mecab);
+/*		for (size_t i = 0; i < talk.size(); i++) {
 			printf_s("%s\n", talk[i].c_str());
-		}
+		}*/
 
-		return "ƒ{ƒb///";
+		talk = searchTalkList(input.tags);
+/*		for (size_t i = 0; i < talk.size(); i++) {
+			printf_s("%s\n", talk[i].c_str());
+		}*/
+
+		if (talk.empty())
+			return "ƒ{ƒb///";
+
+		std::uniform_int_distribution<> randTalk(0, talk.size() - 1);
+		return talk[randTalk(mt)];
 	}
 
-	std::string Talk::searchTalkList(const char* key)
+	std::string Talk::searchTalkList(std::string key)
 	{
 		for (size_t i = 0; i < talk_list.size(); i++) {
 			for (size_t j = 0; j < talk_list[i].tags.size(); j++) {
@@ -138,7 +151,47 @@ namespace OTA {
 			}
 			if (flag) {
 				flag = false;
-				talks.emplace_back(talk_list[n].talk);
+				bool f = false;
+
+				for (size_t fukkin = 0; fukkin < talk_list[n].tags.size(); fukkin++) {
+					if (talk_list[n].tags[fukkin] == "‘Şê") {
+						f = true;
+						break;
+					}
+				}
+				if (!f)
+					talks.push_back(insertNameTalk(talk_list[n].talk, yourname));
+			}
+		}
+
+		return talks;
+	}
+
+	std::vector<std::string> Talk::searchTalkList(std::vector<mean_t> key)
+	{
+		std::vector<std::string> talks;
+		bool flag = false;
+
+		for (size_t n = 0; n < talk_list.size(); n++) {
+			for (size_t i = 0; i < key.size(); i++) {
+				if (talk_list[n].talk.find(key[i].phrase) == std::string::npos) {
+					flag = false;
+					break;
+				}
+				flag = true;
+			}
+			if (flag) {
+				flag = false;
+				bool f = false;
+
+				for (size_t fukkin = 0; fukkin < talk_list[n].tags.size(); fukkin++) {
+					if (talk_list[n].tags[fukkin] == "‘Şê"){
+						f = true;
+						break;
+					}
+				}
+				if (!f)
+					talks.push_back(insertNameTalk(talk_list[n].talk, yourname));
 			}
 		}
 

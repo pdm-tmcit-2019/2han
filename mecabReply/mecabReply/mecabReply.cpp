@@ -13,10 +13,10 @@ int main()
 	while (true) {
 		gets_s(a, sizeof(a));
 		input.content = a;
-		std::cout << talk.replyTalk(input) << std::endl;
-		OTA::Meaning(input.content).printPargeResult();
+		std::cout << talk.replyTalk(input) << std::endl << std::endl;
+//		OTA::Meaning(input.content).printPargeResult();
 
-		if (END_DETECt) {
+		if (END_DETECT) {
 			break;
 		}
 	}

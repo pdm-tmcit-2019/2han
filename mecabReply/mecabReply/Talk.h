@@ -4,8 +4,9 @@
 #include "Meaning.h"
 #include "processes.h"
 #include <iostream>
+#include <random>
 
-#define END_DETECt (input.content == "終わり" || input .content== "end" || input .content== "END" || input .content== "終")
+#define END_DETECT (input.content == "終わり" || input .content== "end" || input .content== "END" || input .content== "終")
 
 namespace OTA {
 	struct lists
@@ -18,6 +19,7 @@ namespace OTA {
 	{
 		std::string name;
 		std::string content;
+		std::vector<std::string> tags;
 	};
 
 	class Talk
@@ -28,18 +30,22 @@ namespace OTA {
 
 		void printAllTalkList();
 		std::string replyTalk(talk_t input);
+		std::string searchTalkList(std::string key);
 		std::vector<std::string> searchTalkList(std::vector<std::string> key);
+		std::vector<std::string> searchTalkList(std::vector<mean_t> key);
 
 	private:
 		Meaning meaning;
-		std::string myname;
+		std::string myname, yourname;
 		std::vector<lists> talk_list;
+		std::random_device rnd;
+		std::mt19937 mt;
 
-		std::string searchTalkList(const char *key);
 		std::string insertNameTalk(std::string talk, std::string name);
 
 		void setupTalkList();
 		int getCSVFileData();
+		bool detectionWerewolf(std::vector<mean_t> input);
 	};
 
 	inline void Talk::printAllTalkList()
@@ -58,7 +64,20 @@ namespace OTA {
 	{
 		std::vector<std::string> tmp = split(talk, '@');
 
-		return tmp[0] + name + tmp[1];
+		if (tmp.size() >= 2)
+			return tmp[0] + name + tmp[1];
+		return tmp[0];
+	}
+
+	inline bool Talk::detectionWerewolf(std::vector<mean_t> input)
+	{
+		for (size_t i = 0; i < input.size() - 1; i++) {
+			if (input[i].phrase + input[i + 1].phrase == "人狼") {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 }
