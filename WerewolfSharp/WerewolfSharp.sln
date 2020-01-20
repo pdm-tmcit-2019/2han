@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WerewolfSharp", "WerewolfSharp\WerewolfSharp.csproj", "{29D24C04-D4C5-49FB-BF80-DEE8E8610D72}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeCabChat", "..\MeCabChat\MeCabChat.vcxproj", "{6392DA45-DB1B-4135-8FC6-64D72824726B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mecabReply", "mecabReply\mecabReply.vcxproj", "{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,16 +29,16 @@ Global
 		{29D24C04-D4C5-49FB-BF80-DEE8E8610D72}.Release|x64.Build.0 = Release|Any CPU
 		{29D24C04-D4C5-49FB-BF80-DEE8E8610D72}.Release|x86.ActiveCfg = Release|Any CPU
 		{29D24C04-D4C5-49FB-BF80-DEE8E8610D72}.Release|x86.Build.0 = Release|Any CPU
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Debug|x64.ActiveCfg = Debug|x64
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Debug|x64.Build.0 = Debug|x64
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Debug|x86.ActiveCfg = Debug|Win32
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Debug|x86.Build.0 = Debug|Win32
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Release|Any CPU.ActiveCfg = Release|Win32
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Release|x64.ActiveCfg = Release|x64
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Release|x64.Build.0 = Release|x64
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Release|x86.ActiveCfg = Release|Win32
-		{6392DA45-DB1B-4135-8FC6-64D72824726B}.Release|x86.Build.0 = Release|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Debug|x64.ActiveCfg = Debug|x64
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Debug|x64.Build.0 = Debug|x64
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Debug|x86.Build.0 = Debug|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Release|Any CPU.ActiveCfg = Release|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Release|x64.ActiveCfg = Release|x64
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Release|x64.Build.0 = Release|x64
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Release|x86.ActiveCfg = Release|Win32
+		{860D57A0-0CD3-40D4-B2BB-BEC3382488AB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

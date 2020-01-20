@@ -67,8 +67,16 @@
                     <Button Click="ColorSelect" Uid="13" Width="50" Height="50" Margin="10 10" Background="#4CE2E2E2" BorderBrush="{x:Null}"/>
                 </StackPanel>
             </StackPanel>
+            <TextBlock Text="Reply Debug" Margin="20 0"/>
+            <TextBox Text="" Width="200" Margin="20 10" HorizontalAlignment="Left" x:Name="solvebox"/>
+            <Button Content="Solve" Click="Solve" Width="50" Margin="20 0" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <Rectangle Width="{Binding ElementName=settingUI, Path=Width}"  Height="{Binding ElementName=settingUI, Path=Height}" Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" StrokeThickness="1"/>
+
+        <StackPanel Orientation="Vertical">
+
+        </StackPanel>
+            
     </Grid>
 </Window>

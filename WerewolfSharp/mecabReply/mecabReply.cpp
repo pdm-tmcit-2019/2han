@@ -32,6 +32,7 @@ int main(std::string text)
 
 //C#からの入力があって、出力を返す。
 DLLEXPORT std::string __stdcall getFromCSharp(char* text)
+//DLLEXPORT std::string __stdcall getFromCSharp(std::string text)
 {
 	OTA::Talk talk;
 	OTA::talk_t input;

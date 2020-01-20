@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,9 @@ namespace WerewolfSharp.Views
      */
     public partial class SettingWindow : Window
     {
+        [DllImport("mecabReply.dll", CharSet=CharSet.Auto)]
+        public static extern string getFromCSharp(string text);
+
         public SettingWindow()
         {
             InitializeComponent();
@@ -46,7 +50,7 @@ namespace WerewolfSharp.Views
             switch (buttonindex)
             {
                 case 0:
-                    
+
                     break;
                 case 1:
 
@@ -54,6 +58,20 @@ namespace WerewolfSharp.Views
                 case 2:
 
                     break;
+            }
+        }
+
+        private void Solve(object sender, RoutedEventArgs e)
+        {
+            string text = solvebox.Text.ToString();
+            try
+            {
+                string result = getFromCSharp(text);
+                MessageBox.Show(result.ToString());
+            }
+            catch
+            {
+                
             }
         }
     }

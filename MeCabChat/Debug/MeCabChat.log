@@ -1,3 +1,0 @@
-﻿  MeCabChat.cpp
-C:\Users\太田竜正\source\repos\MeCabChat\MeCabChat.cpp(97,21): warning C4018:  '<': signed と unsigned の数値を比較しようとしました。
-  MeCabChat.vcxproj -> C:\Users\太田竜正\source\repos\MeCabChat\Debug\MeCabChat.exe

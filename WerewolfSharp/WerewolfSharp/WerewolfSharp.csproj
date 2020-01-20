@@ -8,6 +8,10 @@
     <StartupObject>WerewolfSharp.App</StartupObject>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>F:\GitHub\WerewolfSharp\WerewolfSharp\DEBUG\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\WolfIcon.ico" />
   </ItemGroup>
