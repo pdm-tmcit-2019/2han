@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\GitHub\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {}
+    "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {}
   },
   "projects": {
-    "F:\\GitHub\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {
+    "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GitHub\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+        "projectUniqueName": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
         "projectName": "WerewolfSharp",
-        "projectPath": "F:\\GitHub\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
+        "projectPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp.csproj",
         "packagesPath": "C:\\Users\\takun\\.nuget\\packages\\",
-        "outputPath": "F:\\GitHub\\WerewolfSharp\\WerewolfSharp\\WerewolfSharp\\obj\\",
+        "outputPath": "F:\\GitHub\\2han\\WerewolfSharp\\WerewolfSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
